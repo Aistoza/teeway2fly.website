@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Teeway2fly</title>
+<style>
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* BODY */
+body {
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* HEADER & NAV */
+header {
+    background-color: #e73e3e;
+    padding: 15px 0;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+nav ul li a:hover {
+    color: #ffb3b3;
+}
+
+/* ABOUT SECTION */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #111;
+    border-radius: 12px;
+    padding: 40px 30px;
+    border: 1px solid #333;
+}
+.about-container h1 {
+    color: #e73e3e;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+.about-container p {
+    font-size: 17px;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+.about-container img {
+    max-width: 200px;
+    border-radius: 50%;
+    margin-bottom: 25px;
+    border: 3px solid #e73e3e;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px 0;
+    background: #111;
+    color: #888;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+    nav ul { flex-direction: column; gap: 15px; }
+    .about-container { padding: 25px 20px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="prices.html">Pricing</a></li>
+        <li><a href="contact.html">Contact / Book</a></li>
+    </ul>
+</nav>
+</header>
+
+<div class="section" id="about-us">
+    <div class="about-container">
+        <!-- Optional: add your photo here -->
+        <img src="photographer.jpg" alt="Teeway2fly Photographer">
+
+        <h1>About Teeway2fly Photography</h1>
+        <p>Welcome to Teeway2fly Photography! Led by Relebohile Mojaki, we capture unforgettable moments with creativity, passion, and professionalism. 
+        Whether it’s personal portraits, family sessions, or special events, we strive to make every shot a masterpiece.</p>
+
+        <p>Our approach blends artistry with technical expertise. We focus on capturing natural expressions and authentic emotions, 
+        ensuring each photo tells a unique story. Every session is customized to your style and needs, making your experience truly special.</p>
+
+        <p>At Teeway2fly, we believe every session should be fun, relaxed, and memorable. We are committed to delivering high-quality images 
+        and an exceptional experience from start to finish.</p>
+
+        <p>Follow us on Instagram: <a href="https://www.instagram.com/teeway2fly/" style="color:#e73e3e; text-decoration:none;">@teeway2fly</a></p>
+    </div>
+</div>
+
+<footer>
+<p>&copy; 2026 Teeway2fly Photography</p>
+</footer>
+
+</body>
+</html>
+

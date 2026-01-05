@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TeeWay2Fly Portfolio</title>
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #222;
+        }
+
+        /* HEADER & NAV */
+        header {
+            background-color: #e73e3e;
+            padding: 15px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: #111;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+        }
+
+        .hero p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        /* INTRO */
+        .intro {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        /* GALLERY GRID */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .gallery img {
+            width: 100%;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        /* LIGHTBOX */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            z-index: 999;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            transform: scale(0.8);
+            animation: zoomIn 0.4s ease forwards;
+            border-radius: 10px;
+        }
+
+        @keyframes zoomIn {
+            to {
+                transform: scale(1);
+            }
+        }
+
+        /* CLOSE BUTTON */
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>TeeWay2Fly</h1>
+    <p>Photography & Creative Visuals</p>
+</section>
+
+<section class="intro">
+    <h2>My Work</h2>
+    <p>Click any image to view it full size.</p>
+</section>
+
+<section class="gallery">
+    <img src="images/marshallst_edited.jpg" alt="Photo 1">
+    <img src="images/redroom2_edited.jpg" alt="Photo 2">
+    <img src="images/whitefit.jpg" alt="Photo 3">
+    <img src="images/green photo. jpg.jpg" alt="Photo 4">
+    <!-- Add more images as needed -->
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox">
+    <span class="close">&times;</span>
+    <img src="" alt="Popup Image">
+</div>
+
+<footer>
+    <p>© 2026 TeeWay2Fly</p>
+</footer>
+
+<script>
+    // LIGHTBOX JS
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImg = document.querySelector('.lightbox img');
+    const closeBtn = document.querySelector('.close');
+
+    galleryImages.forEach(img => {
+        img.addEventListener('click', () => {
+            lightbox.classList.add('active');
+            lightboxImg.src = img.src;
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+        if(e.target !== lightboxImg && e.target !== closeBtn){
+            lightbox.classList.remove('active');
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
